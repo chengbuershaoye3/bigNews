@@ -40,3 +40,4 @@ $.ajax({
         $('#userForm input[name="password"]').val(response.data.password)
     }
 })
+

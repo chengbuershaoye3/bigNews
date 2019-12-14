@@ -85,12 +85,12 @@
    <!-- 首页加上调用页码的函数 --><!-- disabled?? -->
   <li class="page-item first "><a href="javascript:;" class="page-link" onclick="changePage(1)">首页</a></li>
 
-  <li class="page-item prev"  ><a href="javascript:;" class="page-link "    onclick="changePage(--num)" >上一页</a></li>
+  <li class="page-item prev"  ><a href="javascript:;" class="page-link"    onclick="changePage(--num)" >上一页</a></li>
 
-
+ 
   <%for(i=1;i<=12;i++){%>
   <!-- 点击页码调用函数 背景色有个类名active--> 
-  <li class="page-item "><a href="javascript:;"  class="page-link" id="addPage" >{{i}}</a></li> 
+  <li class="page-item {{onclick ? 'active': ''}}"><a href="javascript:;"  class="page-link" id="addPage" >{{i}}</a></li> 
   <%}%>
   
   <li class="page-item next"><a href="javascript:;" class="page-link" onclick="changePage(++num)" >下一页</a></li>
