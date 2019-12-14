@@ -20,7 +20,7 @@
       用户信息修改
     </div>
     <div class="container-fluid common_con">
-      <form class="form-horizontal article_form">
+      <form class="form-horizontal article_form" id="userForm">
         <div class="form-group">
           <label for="inputEmail3" class="col-sm-2 control-label">用户名称：</label>
           <div class="col-sm-4">
@@ -43,9 +43,9 @@
         <div class="form-group">
           <label for="inputPassword3" class="col-sm-2 control-label">用户图标：</label>
           <div class="col-sm-10">
-            <img src="images/2.jpg" alt="" class="user_pic">
+            <img src="images/2.jpg" alt="" class="user_pic" id="preview">
             <input style="display: none" name="userPic" type="file" id="exampleInputFile">
-            <!-- 给label标签的for属性赋值,值是input标签的id,那这样的话点击label就相当于点击了input -->
+            <!-- 给label标签的for属性赋值,值是input标签 的id,那这样的话点击label就相当于点击了input -->
             <br>
             <label for="exampleInputFile">
               <img src="./images/uploads_icon.jpg" style="height: 50px;" alt="">
@@ -70,9 +70,34 @@
     </div>
   </div>
 
-  <script>
-  
-  </script>
+  <!-- <script src="../admin/js/user.js"></script> -->
+  <!-- <script>
+    // 要求:图片的预览功能
+    // 1-给文件控件注册change事件
+    $('#exampleInputFile').on('change', function () {
+      // 2-图片的的预览
+      var file = this.files[0];
+      var imgURL = URL.createObjectURL(file);
+      $('#preview').prop('src', imgURL);
+    });
+    // 给用户表单注册submit事件
+    $('#userForm').on('submit', function () {
+       var formData = new FormData(this);
+      // 2-发送ajax请求
+      $.ajax({
+        type:'post',
+        url: 'http://localhost:8080/api/v1/admin/user/edit',
+        data: formData,
+        processData:false,
+        contentType: false,
+        success: function(response){
+          console.log(response);
+        }
+      })
+      return false;
+    })
+  </script> -->
+  <script src="js/user.js"></script>
 </body>
 
 </html>
