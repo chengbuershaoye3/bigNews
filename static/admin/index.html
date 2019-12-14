@@ -29,7 +29,7 @@
       </div>
 
       <div class="level01">
-        <a href="#">
+        <a href="javascript:;">
           <i class="iconfont icon-icon-article"></i>
           <span>文章管理</span>
           <b class="iconfont icon-arrowdownl"></b>
@@ -75,14 +75,14 @@
 
   <div class="header_bar">
     <form class="search_form">
-      <input type="text" placeholder="请输入搜索内容">
+      <input type="text" placeholder="请输入搜索内容" class="keys">
       <i class="iconfont icon-search"></i>
     </form>
 
     <div class="user_center_link">
       <a href="user.html" onclick="setMenu(3,0)" target="main_frame">个人中心</a>
       <img src="images/2.jpg" alt="person">
-      <a href="#"><i class="iconfont icon-tuichu"></i> 退出</a>
+      <a href="javascript:;" id="loginout"><i class="iconfont icon-tuichu"></i> 退出</a>
     </div>
   </div>
 
@@ -165,9 +165,7 @@
   </script>
 
   <!-- 业务逻辑代码 -->
-  <script>
-
-  </script>
+  <script src="js/common.js"></script>
 </body>
 
 </html>

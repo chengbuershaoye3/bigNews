@@ -115,10 +115,10 @@ $.ajax({
     url: "http://localhost:8080/api/v1/index/latest_comment",
     type: "get",
     success: function(response) {
-        for (var i = 0; i < response.data.length; i++) {
-            var dd = response.date[i].date
-        }
-        console.log(dd);
+        // for (var i = 0; i < response.data.length; i++) {
+        //     var dd = response.date[i].date
+        // }
+        // console.log(dd);
 
         // console.log(response.data[0].date);
 
