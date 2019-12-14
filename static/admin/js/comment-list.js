@@ -7,7 +7,7 @@ $.ajax({
         perpage: 15,
     },
     success: function (response) {
-        // console.log(response);
+        console.log(response);
         //拼接评论列表
         var html = template('comment_listTpl', response);
         $('#comment_listBox').html(html);
@@ -27,7 +27,7 @@ $('#comment_pageBox').on('click','#addPage',function(){
     changePage(num);
     // return num;
 })
-console.log(num);
+// console.log(num);
 
 
     //2.分页函数 发送ajax请求传递页码重新渲染页面

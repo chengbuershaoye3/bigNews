@@ -21,6 +21,7 @@ $('#userForm').on('submit',function(){
         success: function(response){
             alert('用户修改成功')
             location.reload()
+            // location.href = 'index.html'
                         
         }
     })
@@ -40,3 +41,4 @@ $.ajax({
         $('#userForm input[name="password"]').val(response.data.password)
     }
 })
+

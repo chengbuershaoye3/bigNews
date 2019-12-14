@@ -12,11 +12,10 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.pagination.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    <!-- bootstrap  -->
-    <!-- <link rel="stylesheet" href="admin/js/bootstrap/css/bootstrap.min.css"> -->
+
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.pagination.min.js"></script>
-    <!-- bootstrap  -->
+
 </head>
 
 <body>
@@ -45,6 +44,7 @@
                     <li><a href="#">外 汇</a></li>
                     <li><a href="#">公 司</a></li> -->
                 </ul>
+
             </div>
             <ul class="left_menu fl" id="leftBox">
                 <!-- <li><a href="#">最 新</a></li>
@@ -79,7 +79,7 @@
                         currentPage: 2,
                         totalPage: 8,
                         callback: function(current) {
-                            alert('ok!');
+                            // alert('ok!');
                         }
                     });
                 });
@@ -137,7 +137,7 @@
         </div>
         <div class="common_news_list">
             <a href="#" class="list_pic"><img src="{{$value.cover}}" alt=""></a>
-            <h4><a href="#">{{$value.title}}</a></h4>
+            <h4><a href="/article.html?articleId={{$value.id}}">{{$value.title}}</a></h4>
             <p>{{$value.content}}
             </p>
             <div class="new_info">
@@ -153,9 +153,6 @@
     <script src="js/template-web.js"></script>
     <script src="js/public.js"></script>
     <script src="js/search.js"></script>
-
-
-
 </body>
 
 </html>
