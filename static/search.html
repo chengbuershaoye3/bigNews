@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大事件-列表页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.pagination.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- bootstrap  -->
+    <!-- <link rel="stylesheet" href="admin/js/bootstrap/css/bootstrap.min.css"> -->
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.pagination.min.js"></script>
+    <!-- bootstrap  -->
+</head>
+
+<body>
+    <div class="header">
+        <a href="#" class="logo fl"><img src="images/logo.png" alt="logo"></a>
+        <div class="search_form fl" id="searchForm">
+            <input type="text" class="search_txt" placeholder="黑洞照片">
+            <button class="search_btn" id="searchBtn"><i class="fa fa-search"></i></button>
+        </div>
+        <div class="link_info fr">
+            <a href="#"><i class="fa fa-angle-right"></i>&nbsp;&nbsp;网站地图</a><br>
+            <a href="#"><i class="fa fa-angle-right"></i>&nbsp;&nbsp;招聘信息</a>
+        </div>
+    </div>
+
+    <div class="menu_con">
+        <div class="menu">
+            <div class="menu_collapse fl">
+                <a href="javascript:;" class="level_one"><i class="fa fa-list-ul"></i>全部分类</a>
+                <ul class="level_two" id="upBox">
+                    <li class="up"></li>
+                    <!-- <li><a href="#">最 新</a></li>
+                    <li><a href="#">科 技</a></li>
+                    <li><a href="#">股 市</a></li>
+                    <li><a href="#">商 品</a></li>
+                    <li><a href="#">外 汇</a></li>
+                    <li><a href="#">公 司</a></li> -->
+                </ul>
+            </div>
+            <ul class="left_menu fl" id="leftBox">
+                <!-- <li><a href="#">最 新</a></li>
+                <li><a href="#">科 技</a></li>
+                <li><a href="#">股 市</a></li>
+                <li><a href="#">商 品</a></li>
+                <li><a href="#">外 汇</a></li>
+                <li><a href="#">公 司</a></li> -->
+            </ul>
+            <ul class="right_menu fr">
+                <li><a href="#">科技专题</a></li>
+                <li><a href="#">财经专题</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main_con clearfix">
+        <div class="left_con setfr">
+            <!-- 另外加的盒子 -->
+            <!-- <div id="searchCategory"></div> -->
+            <!-- <div class="list_title">
+                <h3>爱科技</h3>
+            </div> -->
+
+            <!-- 另外加的盒子 -->
+            <div id="searchBox"> </div>
+
+            <div id="pagination" class="page" id="pageTpl"></div>
+            <script>
+                $(function() {
+                    $("#pagination").pagination({
+                        currentPage: 2,
+                        totalPage: 8,
+                        callback: function(current) {
+                            alert('ok!');
+                        }
+                    });
+                });
+            </script>
+        </div>
+        <div class="right_con setfl">
+            <div class="common_wrap">
+                <h3><i class="fa fa-bar-chart"></i> 一周热门排行</h3>
+                <ul class="content_list" id="rankBox">
+                    <!-- <li><span class="first">1</span><a href="#">神奇的水滴摄影，泡泡中的世界泡泡中的世界</a></li>
+                    <li><span class="second">2</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span class="third">3</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>4</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>5</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>6</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li>
+                    <li><span>7</span><a href="#">神奇的水滴摄影，泡泡中的世界</a></li> -->
+                </ul>
+            </div>
+            <div class="common_wrap">
+                <h3><i class="fa fa-commenting-o"></i> 最新评论</h3>
+                <ul class="content_list comment_list" id="commentBox">
+                    <!-- 最新评论 -->
+                </ul>
+            </div>
+            <div class="common_wrap">
+                <h3><i class="fa fa-bullseye"></i> 焦点关注</h3>
+                <ul class="content_list guanzhu_list" id="attentionBox">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer clearfix">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>
+        </div>
+        <p>CopyRight © 2019 深圳大事件信息技术股份有限公司 All Rights Reserved</p>
+        <p>电话：0755-****888 粤ICP备*******8号</p>
+    </div>
+
+
+    <!-- 搜索模板 -->
+    <script id="searchTpl" type="text/html">
+        {{each data}}
+
+        <div class="list_title">
+            <h3>{{$value.category}}</h3>
+        </div>
+        <div class="common_news_list">
+            <a href="#" class="list_pic"><img src="{{$value.cover}}" alt=""></a>
+            <h4><a href="#">{{$value.title}}</a></h4>
+            <p>{{$value.content}}
+            </p>
+            <div class="new_info">
+                <span>标签：{{$value.category}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>&nbsp;阅读( {{$value.read}}
+            )&nbsp;&nbsp;&nbsp;<i class="fa fa-commenting"></i>&nbsp;评论( {{$value.comments}}  )</span>
+                <b>发布于{{$value.date}}</b>
+            </div>
+        </div>
+        {{/each}}
+    </script>
+
+
+    <script src="js/template-web.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/search.js"></script>
+
+
+
+</body>
+
+</html>
