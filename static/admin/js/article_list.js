@@ -4,7 +4,7 @@ $.ajax({
     type:'get',
     url:'http://localhost:8080/api/v1/admin/article/query',
     success:function(response){
-        // console.log(response);
+        console.log(response);
         
         var html = template('articlesTpl',{data:response.data.data});
          //渲染文章数据到页面
@@ -22,12 +22,15 @@ $.ajax({
         var page = template('pageTpl',{
             data:response.data
         });
+        console.log(page);
         $('#pageBox').html(page);
     }
 });
 
 //页码单击事件的处理函数
 function changePage(page){
+    console.log(page);
+    // return;
     console.log(arr);
     var data = {};
     //遍历一下数组,将遍历出来的数组以键值对的形式添加到data对象中

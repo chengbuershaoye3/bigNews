@@ -17,6 +17,12 @@ $.ajax({
         $('#article_form input[name="date"]').val(response.data.date);
         $('#article_form input[id="rich_content"]').val(response.data.content);
         //发送ajax请求,获取文章分类数据
+        $('#exampleInputFile').on('change',function(){
+            var file = this.files[0];
+            var imgURL = URL.createObjectURL(file);
+            $('#img').prop('src',imgURL)
+        })
+
         $.ajax({
             type:'get',
             url:'http://localhost:8080/api/v1/admin/category/list',
