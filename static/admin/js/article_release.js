@@ -68,7 +68,7 @@ $('#article_form').on('click','#save',function(){
     // formData.append('content',tinyMCE.activeEditor.getContent())
     //获取富文本编辑器里面的内容
     formData.set('content',tinyMCE.activeEditor.getContent());
-    formData.append('state','存为草稿');
+    formData.append('state','草稿');
     // var formData = $(this).serialize();
     // console.log(formData);
     
