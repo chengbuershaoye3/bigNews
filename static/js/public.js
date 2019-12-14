@@ -147,12 +147,6 @@ $.ajax({
     }
 })
 
-// 处理日期格式
-function formateDate(date) {
-    date = new Date(date);
-    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
-
-}
 
 function commentTime(time1, time2) {
     // 获取当前时间与评论时间差值
@@ -181,5 +175,12 @@ function commentTime(time1, time2) {
     if (s > 0) {
         return (s + '秒前')
     }
+
+}
+
+// 处理日期格式
+function formateDate(date) {
+    date = new Date(date);
+    return date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate()
 
 }

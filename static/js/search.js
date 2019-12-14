@@ -15,15 +15,15 @@ if (key.trim().length > 0) {
 $.ajax({
     type: 'get',
     url: 'http://localhost:8080/api/v1/index/search',
+    // 携带key关键字 发送请求渲染页面
     data: data,
     success: function(response) {
         // console.log(response);
-
-
         // 渲染搜索结果
         var html = template('searchTpl', { data: response.data.data });
         $('#searchBox').html(html);
 
+        $("#pagination").pagination(obj);
         var obj = {
             currentPage: response.data.page,
             totalPage: response.data.pages,
@@ -34,8 +34,6 @@ $.ajax({
                     url: 'http://localhost:8080/api/v1/index/search',
                     data: {
                         page: current,
-
-
                     },
                     success: function(response) {
 
@@ -48,8 +46,6 @@ $.ajax({
             }
         };
         // console.log(obj);
-        $("#pagination").pagination(obj);
-
 
     }
 })
